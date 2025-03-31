@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Экспорт Яндекс Музыки</title>
+    <style>
+        body {
+            background-color: #E6E6FA;
+            font-family: Arial, sans-serif;
+            color: #4B0082;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        form {
+            background-color: #D8BFD8;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        label {
+            font-size: 1.2em;
+            margin: 10px 0;
+            display: block;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #4B0082;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus {
+            border-color: #8A2BE2;
+            outline: none;
+        }
+        input[type="submit"] {
+            background-color: #8A2BE2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.5em;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #6A5ACD;
+        }
+        .playlist-img {
+            margin-top: 20px;
+            cursor: pointer;
+            width: 100px; /* Размер изображений */
+            height: auto;
+            margin-right: 10px; /* Отступ между изображениями */
+        }
+        .buttons-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Экспорт Яндекс Музыки</h1>
+    <form method="post" action="/">
+        <label for="playlist_url_1">Введите ссылку на первый плейлист:</label>
+        <input type="text" id="playlist_url_1" name="playlist_url_1" required>
+
+        <label for="playlist_url_2">Введите ссылку на второй плейлист:</label>
+        <input type="text" id="playlist_url_2" name="playlist_url_2" required>
+
+        <input type="submit" value="Экспортировать">
+    </form>
+
+    <div class="buttons-container">
+        <img class="playlist-img" src="https://avatars.yandex.net/get-music-user-playlist/38125/103372440.1175.24175/m1000x1000?1739448524175" alt="Плейлист 1" onclick="addPlaylistUrl('https://music.yandex.com/users/music-blog/playlists/1175')">
+        <img class="playlist-img" src="https:////avatars.yandex.net/get-music-user-playlist/11300679/103372440.2616.13710ru/200x200?1739785914156" alt="Плейлист 2" onclick="addPlaylistUrl('https://music.yandex.com/users/music-blog/playlists/2616')">
+        <img class="playlist-img" src="//avatars.yandex.net/get-music-user-playlist/11360783/103372440.2441.99625/m1000x1000?1739450699625" alt="Плейлист 3" onclick="addPlaylistUrl('https://music.yandex.com/users/music-blog/playlists/2441')">
+        <img class="playlist-img" src="//avatars.yandex.net/get-music-user-playlist/10311229/653503978.1148.99068/m1000x1000?1738339899068" alt="Плейлист 4" onclick="addPlaylistUrl('https://music.yandex.com/users/yandexmusic/playlists/1148')">
+        <img class="playlist-img" src="//avatars.yandex.net/get-music-user-playlist/28719/103372440.1878.58882/m1000x1000?1738756858882" alt="Плейлист 5" onclick="addPlaylistUrl('https://music.yandex.com/users/music-blog/playlists/1878')">
+    </div>
+
+    <script>
+        function addPlaylistUrl(url) {
+            // Замените первое текстовое поле при клике на изображение
+            // Чтобы заполнить второе текстовое поле, можно добавить другую функцию или просто использовать два поля
+            document.getElementById('playlist_url_1').value = url;
+        }
+    </script>
+</body>
+</html>

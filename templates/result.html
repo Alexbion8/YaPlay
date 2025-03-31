@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты экспорта Яндекс Музыки</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #6a0dad;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #4b0082;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .result {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            transition: transform 0.2s;
+        }
+
+        .result:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #6a0dad;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #5a0a9a;
+        }
+
+        .floating-btn {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #8A2BE2;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .floating-btn img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .common-elements {
+            margin-top: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            white-space: pre-wrap; /* Для корректного отображения символов новой строки */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Результаты экспорта</h1>
+
+        <div class="result">
+            <h2>У вас совпадает:</h2>
+            <p>{{ col_poh_trekov_result }}</p>
+        </div>
+
+        <div class="result">
+            <h2>Процентное соотношение ваших совпадений:</h2>
+            <p>{{ proc_shoshesti_result }}</p>
+        </div>
+
+        <div>
+            <h2>Скачать файл:</h2>
+            <a href="{{ url_for('download_file') }}">Скачать common_elements.txt</a>
+        </div>
+
+        <div class="common-elements">
+            <h2>Содержимое файла common_elements.txt:</h2>
+            <pre>{{ common_elements }}</pre>
+        </div>
+    </div>
+
+    <button class="floating-btn">
+        <img src="C:\Users\Таисия\PycharmProjects\yandex_music_export\icons8-телеграмма-app-64.png" alt="Кнопка">
+    </button>
+</body>
+</html>
